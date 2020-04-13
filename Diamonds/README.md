@@ -4,6 +4,7 @@ The goal is simple, provided a letter you display a "diamond" made of each lette
 
 ## Example for letter 'G'
 
+```
       A
      B B
     C   C
@@ -17,6 +18,7 @@ G           G
     C   C
      B B
       A
+```
       
 
 ## How I did it
