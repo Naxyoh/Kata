@@ -21,16 +21,19 @@ func createSequence(for letter: Character) -> String {
 
 func printDiamonds(for letter: Character) -> String {
     let result = createSequence(for: letter)
-        .map { String($0) + String($0) }
-        .joined(separator: "\n")
+        .map { character -> String in String(character) + String(character) + "," }
+        .reduce("", +)
         .dropFirst()
-        .reduce([String](), { [($0 + [String($1)]).joined()] })
-        .joined()
+        .split(separator: ",")
+        .reversed()
+        .enumerated()
+        .map { String(repeating: " ", count: $0) + $1 }
+        .reversed()
+        .joined(separator: "\n")
         
     print(result)
     return result
 }
-
 
 // PrintDiamonds for 'A' returns 'A'
 //printDiamonds(for: "A") == "A"
@@ -42,11 +45,11 @@ func printDiamonds(for letter: Character) -> String {
 //printDiamonds(for: "C") == "ABBCC"
 
 // Introduce new lines
-printDiamonds(for: "B") == "A\nBB"
+//printDiamonds(for: "C") == "A\nBB\nCC"
 
 // Introduce leading spaces
 //printDiamonds(for: "B") == " A\nBB"
-//printDiamonds(for: "C") == "  A\n BB\nCC"
+printDiamonds(for: "C") == "  A\n BB\nCC"
 
 // Introduce spacing between letters
 //printDiamonds(for: "B") == " A\nB B"
