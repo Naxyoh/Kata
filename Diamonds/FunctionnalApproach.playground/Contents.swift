@@ -1,12 +1,4 @@
-extension String {
-    func wrapInArray() -> [String] {
-        self.reduce([String](), { [($0 + [String($1)]).joined()] })
-    }
-    
-    func duplicateEachCharacter() {
-        
-    }
-}
+
 
 func createSequence(for letter: Character) -> String {
     (UnicodeScalar("A").value...UnicodeScalar(String(letter))!.value)
@@ -15,24 +7,53 @@ func createSequence(for letter: Character) -> String {
         .joined()
 }
 
+func createRow(index: Int, letter: String) -> String {
+    letter +
+        String(repeating: " ", count: index == 0 ? 0 : 2 * (index - 1) + 1) +
+        letter +
+    ","
+}
 
+func addLeadingSpaces(index: Int, letter: Substring) -> String {
+    String(repeating: " ", count: index) + String(letter)
+}
 
+func createPyramid(upperPart: [String]) -> [String] {
+    upperPart
+}
 
+func wrapIntoArray(character: String) -> [String] {
+    return []
+}
 
-func printDiamonds(for letter: Character) -> String {
-    let result = createSequence(for: letter)
-        .map { character -> String in String(character) + String(character) + "," }
+func printDiamonds(for letter: Character) {
+    let sequence = createSequence(for: letter)
+    
+    let rows = sequence
+        .map(String.init)
+        .enumerated()
+        .map(createRow)
+    
+    let formattedRows = rows
         .reduce("", +)
         .dropFirst()
         .split(separator: ",")
+    
+    let leadingSpacedRows = formattedRows
         .reversed()
         .enumerated()
-        .map { String(repeating: " ", count: $0) + $1 }
+        .map(addLeadingSpaces)
         .reversed()
+    
+    let upperPart = leadingSpacedRows
+        .reduce([[String]](), { [($0.first ?? []) + [$1]] })
+    
+    let pyramid = upperPart
+        .flatMap { [$0, $0.dropLast().reversed()] }
+        .joined(separator: [])
         .joined(separator: "\n")
-        
-    print(result)
-    return result
+    
+    print(pyramid)
 }
 
 // PrintDiamonds for 'A' returns 'A'
@@ -49,7 +70,7 @@ func printDiamonds(for letter: Character) -> String {
 
 // Introduce leading spaces
 //printDiamonds(for: "B") == " A\nBB"
-printDiamonds(for: "C") == "  A\n BB\nCC"
+//printDiamonds(for: "C") == "  A\n BB\nCC"
 
 // Introduce spacing between letters
 //printDiamonds(for: "B") == " A\nB B"
@@ -57,3 +78,7 @@ printDiamonds(for: "C") == "  A\n BB\nCC"
 
 // Symetric
 //printDiamonds(for: "B") == " A\nB B\n A"
+//printDiamonds(for: "C") == "  A\n B B\nC   C\n B B\n  A"
+
+
+printDiamonds(for: "G")
