@@ -29,10 +29,10 @@ func printDiamonds(for character: Character) -> String {
 //printDiamonds(for: "B") == "AB"
 
 // Repeats
-//printDiamonds(for: "B") == "ABBA"
+//printDiamonds(for: "B") == "ABB"
 
 // Introduce new lines
-//printDiamonds(for: "B") == "A\nBB\nA"
+//printDiamonds(for: "B") == "A\nBB"
 
 // Introduce leading spaces
 //printDiamonds(for: "B") == " A\nBB"
