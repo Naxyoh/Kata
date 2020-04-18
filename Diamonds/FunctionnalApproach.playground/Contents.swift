@@ -1,5 +1,3 @@
-
-
 func createSequence(for letter: Character) -> String {
     (UnicodeScalar("A").value...UnicodeScalar(String(letter))!.value)
         .compactMap { UnicodeScalar($0) }
@@ -16,14 +14,6 @@ func createRow(index: Int, letter: String) -> String {
 
 func addLeadingSpaces(index: Int, letter: Substring) -> String {
     String(repeating: " ", count: index) + String(letter)
-}
-
-func createPyramid(upperPart: [String]) -> [String] {
-    upperPart
-}
-
-func wrapIntoArray(character: String) -> [String] {
-    return []
 }
 
 func printDiamonds(for letter: Character) {
