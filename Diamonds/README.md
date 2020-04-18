@@ -1,4 +1,4 @@
-# Diamonds
+# Diamonds <img src="https://cdn.pixabay.com/photo/2013/07/13/11/35/diamond-158431_1280.png" width="30">
 
 The goal is simple, provided a letter you display a "diamond" made of each letter between 'A' and the given letter.
 
