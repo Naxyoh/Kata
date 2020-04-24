@@ -1,5 +1,4 @@
 # Kata <img src="https://img.icons8.com/color/96/000000/samurai-helmet.png" width="50"/>
-List of different katas I did
 
 ### [Diamonds](https://github.com/Naxyoh/Kata/tree/master/Diamonds) <img src="https://img.icons8.com/color/48/000000/diamonds.png" width="30"/>
 
