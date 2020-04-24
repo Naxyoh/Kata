@@ -1,4 +1,4 @@
-# Diamonds <img src="https://cdn.pixabay.com/photo/2013/07/13/11/35/diamond-158431_1280.png" width="30">
+# Diamonds <img src="https://img.icons8.com/color/48/000000/diamonds.png" width="30"/>
 
 The goal is simple, provided a letter you display a "diamond" made of each letter between 'A' and the given letter.
 
@@ -25,10 +25,10 @@ G           G
 
 I took different approaches:
 
-- [Naive](https://github.com/Naxyoh/Kata/tree/master/Diamonds/NaiveApproach.playground):
+- [Naive](https://github.com/Naxyoh/Kata/tree/master/Diamonds/NaiveApproach):
 Just do it however you want, however you can
 
-- [Functionnal](https://github.com/Naxyoh/Kata/tree/master/Diamonds/FunctionnalApproach.playground):
+- [Functionnal](https://github.com/Naxyoh/Kata/tree/master/Diamonds/FunctionnalApproach):
 No more variables, no more modifying arrays, only functions.
 
 
