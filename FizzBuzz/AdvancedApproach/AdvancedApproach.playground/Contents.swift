@@ -15,7 +15,7 @@ struct FizzBuzzGenerator {
     
     let rules: [FizzBuzzRule]
     
-    func applyRules(to number: Int) -> String {
+    private func applyRules(to number: Int) -> String {
         var result = ""
         rules.forEach { rule in
             if rule.isEligible(number) {
@@ -38,9 +38,15 @@ class FizzBuzzTests: XCTestCase {
     
     var sut: FizzBuzzGenerator!
     
-    override func setUp() {
-        super.setUp()
+    func test_isInitializedWithGivenRules() {
+        // Given
+        let fizzRule = FizzBuzzRule(replacement: "Fizz", isEligible: { $0 % 3 == 0 })
         
+        // When
+        sut = FizzBuzzGenerator(rules: [fizzRule])
+        
+        // Then
+        XCTAssertEqual(sut.rules, [fizzRule])
     }
     
     func test_generate_withoutRules_doesNotTransformValues() {
@@ -52,17 +58,6 @@ class FizzBuzzTests: XCTestCase {
         
         // Then
         XCTAssertEqual(result, Array(1...10).map(String.init))
-    }
-    
-    func test_isInitializedWithGivenRules() {
-        // Given
-        let fizzRule = FizzBuzzRule(replacement: "Fizz", isEligible: { $0 % 3 == 0 })
-        
-        // When
-        sut = FizzBuzzGenerator(rules: [fizzRule])
-        
-        // Then
-        XCTAssertEqual(sut.rules, [fizzRule])
     }
     
     func test_generate_appliesRules_whenOneRuleApplies() {
