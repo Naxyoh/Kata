@@ -27,6 +27,7 @@ FizzBuzz
 ## How I did it
 
 - [Basic approach](https://github.com/Naxyoh/Kata/tree/master/FizzBuzz/NaiveApproach): TDD with only basic rules implemented
+- [Advanced approach](https://github.com/Naxyoh/Kata/tree/master/FizzBuzz/AdvancedApproach): TDD with unlimited set of rules
 
 ## Sources
 
